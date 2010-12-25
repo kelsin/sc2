@@ -69,11 +69,14 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    xml-simple (1.0.12)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coderjoe-sc2ranks
+  httparty
   rails (= 3.0.3)
   sqlite3-ruby
+  xml-simple

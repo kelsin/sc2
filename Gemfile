@@ -10,6 +10,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # sc2ranks
 gem 'coderjoe-sc2ranks', :require => 'sc2ranks'
 
+# ustream
+gem 'httparty'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
