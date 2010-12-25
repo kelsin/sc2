@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20101225170128) do
   add_index "characters", ["name"], :name => "index_characters_on_name"
 
   create_table "matches", :force => true do |t|
+    t.text     "description"
     t.string   "map"
     t.string   "my_race"
     t.string   "vs"
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20101225170128) do
     t.integer  "replay_file_size"
     t.datetime "replay_updated_at"
     t.integer  "video_id"
+    t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -76,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20101225170128) do
     t.string   "url"
     t.string   "image_url_small"
     t.string   "image_url_medium"
+    t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,6 +1,8 @@
 class CreateMatches < ActiveRecord::Migration
   def self.up
     create_table :matches do |t|
+      t.text :description
+
       # Sc2 Data
       t.string :map
       t.string :my_race

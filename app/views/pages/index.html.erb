@@ -13,3 +13,9 @@
 <section id="character">
   <%= render @character %>
 </section>
+<% unless @character.videos.empty? %>
+  <section id="videos">
+    <h1>Videos</h1>
+    <%= render @character.videos %>
+  </section>
+<% end %>
