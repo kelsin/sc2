@@ -1,0 +1,26 @@
+body { background: #000; color: #d2cae3;
+       font-family: Tahoma, Helvetica, sans-serif; }
+a { color: #8874b0; }
+
+#wrapper { margin: 0 auto; width: 640px; }
+
+header { color: #fff; display: block; overflow: auto; }
+header h1 { background-image: url('/images/kelsin-zerg-logo.png');
+            height: 128px; width: 320px; text-indent: -9999px;
+            margin-top: 32px; float: left; }
+header h2 { float: right; font-size: 20px; margin-top: 120px; }
+
+.character h1 { padding-top: 20px; }
+
+.portrait-container { width: 135px; height: 123px; overflow: hidden; position: relative; float: left; }
+.portrait-container div { float: left; }
+.portrait-frame { background-image: url('/images/portrait-summary.png');
+                  width: 135px; height: 123px;
+                  position: absolute; top: 0; left: 0; }
+.portrait { position: absolute; top: 16px; left: 18px; }
+.race-icon { position: absolute; bottom: 20px; right: 24px; }
+
+.character p { font-size: 0.7em; }
+.character span { font-size: 0.8em; color: #0065bd; }
+.character ul { margin-top: 10px; overflow: auto; }
+.character ul li { float: left; padding-right: 1em; line-height: 30px; }

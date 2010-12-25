@@ -1,3 +1,4 @@
 class Video < ActiveRecord::Base
-  has_attached_file :replay
+  has_many :matches
+  belongs_to :characters
 end

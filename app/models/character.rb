@@ -1,4 +1,7 @@
 class Character < ActiveRecord::Base
+  has_many :videos
+  has_many :matches
+
   def bnet_name
     "#{name}##{code}"
   end
@@ -8,11 +11,7 @@ class Character < ActiveRecord::Base
   end
 
   def ratio
-    (self.wins.to_f / self.games.to_f).round 2
-  end
-
-  def league
-    read_attribute(:league).capitalize
+    (self.wins.to_f / self.games.to_f * 100.0).round
   end
 
   def load

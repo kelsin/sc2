@@ -1,0 +1,12 @@
+<% div_for @character do %>
+  <%= portrait(@character) %>
+  <h1><%= @character.name %></h1>
+  <ul>
+    <li><%= image_tag "#{@character.league}-small.png" %></li>
+    <li><%= @character.points %><span>pts</span></li>
+    <li><%= @character.ratio %><span>%</span></li>
+    <li><%= @character.wins %><span>w</span></li>
+    <li><%= @character.losses %><span>l</span></li>
+  </ul>
+  <p>Data grabbed from <%= link_to 'sc2ranks.com', 'http://sc2ranks.com' %></p>
+<% end %>
