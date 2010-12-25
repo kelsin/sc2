@@ -10,7 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101225034300) do
+ActiveRecord::Schema.define(:version => 20101225035827) do
+
+  create_table "channels", :force => true do |t|
+    t.string   "name"
+    t.integer  "ustream_id"
+    t.string   "url"
+    t.string   "image_url_small"
+    t.string   "image_url_medium"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "channels", ["name"], :name => "index_channels_on_name"
+  add_index "channels", ["ustream_id"], :name => "index_channels_on_ustream_id"
 
   create_table "characters", :force => true do |t|
     t.string   "region"
