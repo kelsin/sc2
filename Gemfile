@@ -7,6 +7,9 @@ gem 'rails', '3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+# sc2ranks
+gem 'coderjoe-sc2ranks', :require => 'sc2ranks'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
