@@ -13,6 +13,9 @@ gem 'coderjoe-sc2ranks', :require => 'sc2ranks'
 # ustream
 gem 'httparty'
 
+# Uploaded replays
+gem 'paperclip'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

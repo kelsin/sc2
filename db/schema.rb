@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101225021231) do
+ActiveRecord::Schema.define(:version => 20101225034300) do
 
   create_table "characters", :force => true do |t|
     t.string   "region"
@@ -36,5 +36,31 @@ ActiveRecord::Schema.define(:version => 20101225021231) do
 
   add_index "characters", ["bnet_id"], :name => "index_characters_on_bnet_id"
   add_index "characters", ["name"], :name => "index_characters_on_name"
+
+  create_table "videos", :force => true do |t|
+    t.integer  "ustream_id"
+    t.string   "title"
+    t.text     "description"
+    t.decimal  "length",              :precision => 12, :scale => 3
+    t.string   "url"
+    t.string   "image_url_small"
+    t.string   "image_url_medium"
+    t.string   "map"
+    t.string   "my_race"
+    t.string   "vs"
+    t.string   "vs_race"
+    t.string   "replay_file_name"
+    t.string   "replay_content_type"
+    t.integer  "replay_file_size"
+    t.datetime "replay_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "videos", ["map"], :name => "index_videos_on_map"
+  add_index "videos", ["my_race"], :name => "index_videos_on_my_race"
+  add_index "videos", ["title"], :name => "index_videos_on_title"
+  add_index "videos", ["ustream_id"], :name => "index_videos_on_ustream_id"
+  add_index "videos", ["vs_race"], :name => "index_videos_on_vs_race"
 
 end
