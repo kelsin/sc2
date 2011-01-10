@@ -15,31 +15,32 @@ class Character < ActiveRecord::Base
   end
 
   def load
-    raise "Need name, code and region to load from sc2ranks" if self.code.nil? and self.region.nil? and self.name.nil?
+    raise "Need bnet profile url to load from sc2ranks" if self.bnet_profile_url.nil?
+    sc2ranks = Sc2ranks.new('sc2.kelsin.net')
+    char = sc2ranks.character(self.bnet_profile_url)
 
-    sc2ranks = SC2Ranks::API.new('sc2.kelsin.net')
-    c = sc2ranks.get_team_info(self.name, self.code, self.region)
+    self.region = char.region
+    self.name = char.name
+    self.bnet_id = char.bnet_id
 
-    self.bnet_id = c.bnet_id
+    self.portrait_id = char.portrait.icon_id
+    self.portrait_row = char.portrait.row
+    self.portrait_col = char.portrait.column
 
-    self.portrait_id = c.portrait['icon_id']
-    self.portrait_row = c.portrait['row']
-    self.portrait_col = c.portrait['column']
+    team = char.team(1)
 
-    t = c.teams.find { |team| team['bracket'] == 1 }
+    self.race = team.fav_race
+    self.random = team.is_random?
 
-    self.race = t['fav_race']
-    self.random = t['is_random']
+    self.division = team.division
+    self.rank = team.division_rank
+    self.region_rank = team.region_rank
+    self.world_rank = team.world_rank
 
-    self.division = t['division']
-    self.rank = t['division_rank']
-    self.region_rank = t['region_rank']
-    self.world_rank = t['world_rank']
-
-    self.league = t['league']
-    self.points = t['points']
-    self.wins = t['wins']
-    self.losses = t['losses']
+    self.league = team.league
+    self.points = team.points
+    self.wins = team.wins
+    self.losses = team.losses
 
     self.save
   end

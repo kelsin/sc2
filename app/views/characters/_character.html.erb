@@ -1,6 +1,6 @@
 <% div_for @character do %>
   <%= portrait(@character) %>
-  <h1><%= @character.name %></h1>
+  <h1><%= link_to_sc2ranks @character %></h1>
   <ul class="stats">
     <li><%= image_tag "#{@character.league}-small.png" %></li>
     <li><%= @character.points %><span>pts</span></li>

@@ -1,6 +1,7 @@
 class CreateCharacters < ActiveRecord::Migration
   def self.up
     create_table :characters do |t|
+      t.string :bnet_profile_url
       t.string :region
       t.string :name
       t.integer :code

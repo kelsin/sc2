@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20101225170128) do
   add_index "channels", ["ustream_id"], :name => "index_channels_on_ustream_id"
 
   create_table "characters", :force => true do |t|
+    t.string   "bnet_profile_url"
     t.string   "region"
     t.string   "name"
     t.integer  "code"
