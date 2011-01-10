@@ -3,7 +3,7 @@ require "bundler/capistrano"
 set :application, "sc2"
 
 set :scm, :git
-set :repository,  "kelsin@git.kelsin.net:~/repos/sc2.git"
+set :repository,  "git@github.com:Kelsin/sc2.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 
